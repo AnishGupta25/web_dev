@@ -15,4 +15,5 @@ function processdata(data){
     console.log( fixtureandresultlink );
     // let allmatchesresultlink = cheerio.load(fixtureandresultlink).text();
     // console.log(allmatchesresultlink);
+    getallmatchesdetails();
 }

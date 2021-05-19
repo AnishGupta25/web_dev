@@ -6,13 +6,13 @@ const fs = require("fs");
 
 // request(link , function(error ,response , data){
 //     fs.writeFileSync("./googlehtml.html" , data);
-//     getedata(data);
+//     // getedata(data ,link);
 // });
 let html = fs.readFileSync("./googlehtml.html", "utf8");
 function getedata(html , link){
     let myDocument = cheerio.load(html);
-    let imagesrc = myDocument("img").attr('src');
-    let compsrc = link + imagesrc;
+    let imagesrc = myDocument("div>a.gb_g").text();
+    let compsrc =  imagesrc;
     console.log(compsrc);
 }
 getedata(html , link);
