@@ -27,7 +27,7 @@ function appendtodo(todo){
     todolistdiv.classList.add("todo-items");
 
     let ptag = document.createElement("p");
-    ptag.classList.add("todo-input");
+    ptag.classList.add("todo");
     ptag.textContent = todo;
 
     let deletebutton = document.createElement("button");
