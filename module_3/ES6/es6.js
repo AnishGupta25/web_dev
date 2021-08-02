@@ -46,3 +46,15 @@ let o2 = {c:3};
 
 let o3 = {...o1,...o2,...o1,...o2};
 console.log(o3);
+
+//  de structuring
+
+let address = {
+    city : "Delhi",
+    pin : 110035
+}
+
+let {city , pin } = address;
+
+console.log(city);
+console.log(pin);
