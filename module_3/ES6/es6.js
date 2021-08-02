@@ -10,8 +10,9 @@ function Even(x) {
 
 let ansArr = a.map(double);
 let ans = a.filter(Even);
+let an = a.reduce(double);
 
-console.log(a);
+console.log(an);
 console.log(ansArr);
 console.log(ans);
 
@@ -35,3 +36,13 @@ function myFilter(a , f){
 
 console.log(myMap(a , double));
 console.log(myFilter(a , Even));
+
+
+let b = [...a,...a]; // spread operator (...)
+console.log(b);
+
+let o1 = {a:1 , b:2};
+let o2 = {c:3};
+
+let o3 = {...o1,...o2,...o1,...o2};
+console.log(o3);
