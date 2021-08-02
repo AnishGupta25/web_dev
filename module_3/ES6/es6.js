@@ -14,3 +14,24 @@ let ans = a.filter(Even);
 console.log(a);
 console.log(ansArr);
 console.log(ans);
+
+function myMap(a , f){
+    let arr = [];
+    for(i = 0; i < a.length; i++){
+        arr.push(f(a[i]));
+    }
+    return arr;
+}
+
+function myFilter(a , f){
+    let arr = [];
+    for(i = 0; i < a.length; i++){
+        if(f(a[i])){
+            arr.push(a[i]);
+        }
+    }
+    return arr;
+}
+
+console.log(myMap(a , double));
+console.log(myFilter(a , Even));
