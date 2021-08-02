@@ -58,3 +58,20 @@ let {city , pin } = address;
 
 console.log(city);
 console.log(pin);
+
+//  aero function (=>)
+
+// case 1
+let f = (x , y) =>{
+    return x * y;
+}
+
+//  case 2
+
+let f2 = x => {
+    return 2 * x;
+}
+
+//  case 3
+
+let f3 = x => 2 * x;
