@@ -1,3 +1,5 @@
 node_modules
 # npm install/ i cheerio
 package-lock.json
+
+#npx create-react-app demo
