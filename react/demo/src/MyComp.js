@@ -12,7 +12,10 @@ class MyComp extends React.Component{
             <h1>{ this.state.somenumber}</h1>
             <button onClick = { () =>{
                 this.setState({somenumber :  this.state.somenumber + 1})
-            }}> this is button</button>
+            }}> Increment</button>
+            <button onClick = { () =>{
+                this.setState({somenumber :  this.state.somenumber - 1})
+            }}> Decrement</button>
         </div>
         );
     };

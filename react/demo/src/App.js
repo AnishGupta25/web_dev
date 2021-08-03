@@ -1,9 +1,40 @@
-let App = () => {
-  return (
-    <div>
-      <h1>This is our first react app.</h1>
-    </div>
-  );
-};
+import React from "react";
+class App extends React.Component {
+  state = {
+    tasks: ["make coffee", "make notes", "go for a jog", "new task"],
+    currInput: "",
+  };
+
+  render = () => {
+    return (
+      <div>
+        <input
+          type="text"
+          onChange={(e) => {
+            this.setState({ currInput: e.currentTarget.value });
+          }}
+
+          onKeyDown = {(e) =>{
+            let val = this.state.currInput;
+            if(e.key == "Enter" && val !== ""){
+              this.setState({
+                tasks: [...this.state.tasks , this.state.currInput],
+                currInput: "",
+              });
+            }
+          }}
+
+          value={this.state.currInput}
+        />
+
+        <ul>
+          {this.state.tasks.map((el) => {
+            return <li>{el}</li>;
+          })}
+        </ul>
+      </div>
+    );
+  };
+}
 
 export default App;
