@@ -1,37 +1,44 @@
 import React from "react";
+import "./App.css";
+import List from "./List";
+import Input from "./Input";
+
 class App extends React.Component {
   state = {
     tasks: ["make coffee", "make notes", "go for a jog", "new task"],
     currInput: "",
   };
 
+  handleCurrInput = (value) => {
+    this.setState({ currInput: value });
+  };
+
+  handleTasks = () => {
+    this.setState({
+      tasks: [...this.state.tasks, this.state.currInput],
+      currInput: "",
+    });
+  };
+
+  deleteTask = (singleTask) => {
+    let currTaskArr = this.state.tasks;
+
+    let filteredArr = currTaskArr.filter((element) => {
+      return element != singleTask;
+    });
+
+    this.setState({ tasks: filteredArr });
+  };
+
   render = () => {
     return (
       <div>
-        <input
-          type="text"
-          onChange={(e) => {
-            this.setState({ currInput: e.currentTarget.value });
-          }}
-
-          onKeyDown = {(e) =>{
-            let val = this.state.currInput;
-            if(e.key == "Enter" && val !== ""){
-              this.setState({
-                tasks: [...this.state.tasks , this.state.currInput],
-                currInput: "",
-              });
-            }
-          }}
-
-          value={this.state.currInput}
+        <Input
+          handleCurrInput={this.handleCurrInput}
+          handleTasks={this.handleTasks}
+          currInput={this.state.currInput}
         />
-
-        <ul>
-          {this.state.tasks.map((el) => {
-            return <li>{el}</li>;
-          })}
-        </ul>
+        <List tasks={this.state.tasks} deleteTask={this.deleteTask} />
       </div>
     );
   };
