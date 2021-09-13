@@ -6,6 +6,7 @@
   "dependencies": {
     "bootstrap": "^5.1.0",
     "cheerio": "^1.0.0-rc.9",
+    "firebase": "^8.9.1",
     "math.js": "^1.1.46",
     "mathjs": "^9.4.4",
     "puppeteer": "^9.1.1",
