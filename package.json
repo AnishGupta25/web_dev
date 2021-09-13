@@ -1,11 +1,11 @@
 {
   "name": "web_pp11",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "bootstrap": "^5.1.0",
     "cheerio": "^1.0.0-rc.9",
+    "express": "^4.17.1",
     "firebase": "^8.9.1",
     "math.js": "^1.1.46",
     "mathjs": "^9.4.4",
@@ -26,5 +26,6 @@
   "bugs": {
     "url": "https://github.com/AnishGupta25/web_dev/issues"
   },
-  "homepage": "https://github.com/AnishGupta25/web_dev#readme"
+  "homepage": "https://github.com/AnishGupta25/web_dev#readme",
+  "description": ""
 }
