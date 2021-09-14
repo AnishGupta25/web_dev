@@ -36,3 +36,8 @@ app.delete('/home',(req , res) => {
     user = {"hello" : "hell0"};
     res.json(user);
 })
+
+app.get('/home/:id' , (req, res) => {
+    // console.log('<h1>Home</h1>');
+    res.json(req.params);
+})
