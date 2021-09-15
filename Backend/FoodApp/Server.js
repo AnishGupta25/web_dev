@@ -28,6 +28,18 @@ authRouter
 .route('/signup')
 .post(signupUser);
 
+// redirect
+
+app.get('/user-all' , (req , res) =>{
+    res.redirect('/user');
+})
+
+
+// 404 page
+app.use((req , res) => {
+    res.sendFile('public/404.html' , {root : __dirname})
+});
+
 function signupUser(req,res){
     // let userDetails=req.body;
     // let name=userDetails.name;
@@ -90,3 +102,4 @@ function getUserById(req,res){
     console.log(req.params);
     res.json(req.params.id);
 }
+
