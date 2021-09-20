@@ -5,12 +5,15 @@
   "dependencies": {
     "bootstrap": "^5.1.0",
     "cheerio": "^1.0.0-rc.9",
+    "email-validator": "^2.0.4",
     "express": "^4.17.1",
     "firebase": "^8.9.1",
     "math.js": "^1.1.46",
     "mathjs": "^9.4.4",
+    "mongoose": "^6.0.6",
     "puppeteer": "^9.1.1",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "validator": "^13.6.0"
   },
   "devDependencies": {},
   "scripts": {

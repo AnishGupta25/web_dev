@@ -3,3 +3,5 @@ node_modules
 package-lock.json
 
 #npx create-react-app demo
+
+secrets.js 
