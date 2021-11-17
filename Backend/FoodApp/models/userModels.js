@@ -10,49 +10,56 @@ mongoose.connect(db.link).then(function(){
     console.log('err');
 })
 
-const userSchema = new mongoose.Schema({
+const userSchema=new mongoose.Schema({
     name:{
         type:String,
         required:true
     },
     age:{
-        type:Number,
+        type:Number
     },
     email:{
         type:String,
         required:true,
         unique:true,
-        valid:function(){
+        validate:function(){
             return validator.validate(this.email);
         }
+    },
+    createdAt:{
+        type:Date
     },
     password:{
         type:String,
         required:true,
-        min : 8,
-        // unique:true
+        min:8
     },
     confirmPassword:{
-        type : String,
-        required : true,
-        // unique : true
-        min : 8,
-        valid:function(){
-            return this.password == this.confirmPassword;
+        type:String,
+        required:true,
+        min:8,
+        validate:function(){
+            return this.password==this.confirmPassword
         }
     }
 });
 
-const userModel = mongoose.model('userModel' , userSchema);
+userSchema.pre('save',function(){
+    this.confirmPassword=undefined;
+});
 
-(async function createUser(){
-    let user = {
-        name : 'Anish Gupta',
-        age : 21,
-        email : 'anishgupta25220@gmail.com',
-        password : 'kartik25',
-        confirmPassword : 'kartik25',
-    };
-    let userObj = await userModel.create(user);
-    console.log(userObj);
-})();
+const userModel=mongoose.model('userModel',userSchema);
+
+module.exports=userModel;
+
+// (async function createUser(){
+//     let user={
+//         name:'Abhi',
+//         age:20,
+//         email:'abcd@gmail.com',
+//         password:'12345678',
+//         confirmPassword:'12345678'
+//     };
+    
+//     console.log(userObj);
+// })();
